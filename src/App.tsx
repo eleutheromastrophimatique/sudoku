@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/** @jsxImportSource @emotion/react */
+import { jsx, ThemeProvider } from "@emotion/react";
+import { Grid, Card, Title, Button, Game } from "./components";
+import { Content } from "./components/styles/content";
 
 function App() {
+  function onClick(indexOfArray: number) {
+    console.log("cell index", indexOfArray);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Content>
+      <Card>
+        <Title>Sudoku</Title>
+        <Game />
+      </Card>
+    </Content>
   );
 }
 
